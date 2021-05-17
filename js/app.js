@@ -2,7 +2,10 @@ const btns = [
   { class: "toolbar__btn-text-align-left", dataset: "justifyLeft" },
   { class: "toolbar__btn-text-align-center", dataset: "justifyCenter" },
   { class: "toolbar__btn-text-align-right", dataset: "justifyRight" },
-  { class: "toolbar__btn-text-align-justify", dataset: "justifyFull" }
+  { class: "toolbar__btn-text-align-justify", dataset: "justifyFull" },
+  { class: "toolbar__btn-text-style-bold", dataset: "bold" },
+  { class: "toolbar__btn-text-style-italic", dataset: "italic" },
+  { class: "toolbar__btn-text-style-underline", dataset: "underline" }
 ]
 
 // HEADER 
@@ -25,14 +28,19 @@ const buttonsTextAlign = document.createElement("div");
 buttons.appendChild(buttonsTextAlign);
 buttonsTextAlign.classList.add("toolbar__btn-text-align");
 
+// TOOLBAR BUTTONS (Text Style)
+const buttonsTextStyle = document.createElement("div");
+buttons.appendChild(buttonsTextStyle);
+buttonsTextStyle.classList.add("toolbar__btn-text-style");
+
 let containerBtnName;
 
 for (let btn of btns) {
 
   if (`${btn.class}`.slice(0, 23) === "toolbar__btn-text-align") {
     containerBtnName = buttonsTextAlign;
-  } else {
-    
+  } else if ((`${btn.class}`.slice(0, 23) === "toolbar__btn-text-style")) {
+    containerBtnName = buttonsTextStyle;
   }
 
   const generalBtn = document.createElement("button");

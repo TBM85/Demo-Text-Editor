@@ -54,7 +54,14 @@ h1 {
 }
 
 .toolbar__buttons {
-  margin: 0.6em 1em;
+  margin: 0.5em 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.toolbar__btn-text-align,
+.toolbar__btn-text-style {
+  margin: 0.25em 1em;
 }
 
 .toolbar__btn-text-align-left {
@@ -71,6 +78,18 @@ h1 {
 
 .toolbar__btn-text-align-justify {
   background-image: url("../assets/icons/paragraph-justify.svg");
+}
+
+.toolbar__btn-text-style-bold {
+  background-image: url("../assets/icons/bold.svg");
+}
+
+.toolbar__btn-text-style-italic {
+  background-image: url("../assets/icons/italic.svg");
+}
+
+.toolbar__btn-text-style-underline {
+  background-image: url("../assets/icons/underline.svg");
 }
 
 /*------------------------------------*\
