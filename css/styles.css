@@ -1,30 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/*------------------------------------*\
+  #GENERAL
+\*------------------------------------*/
 
 html {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   text-align: center;
   min-height: 100vh;
 }
+
 body {
   margin: 0;
   background-color: #f3f3f3;
 }
+
+button {
+  width:   3.5em;
+  height:  3.5em;
+  margin:  0.25em;
+  padding: 0.5em;
+  background-color:    #fff;
+  background-repeat:   no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 0.25em;
+  box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+  cursor: pointer;
+}
+
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+
 .header {
   box-shadow: 0 6px 6px -4px #cacaca;
 }
+
 h1 {
-  margin: 0;
+  margin:  0;
   padding: 0.5em;
 }
+
+/*------------------------------------*\
+  #TOOLBAR
+\*------------------------------------*/
+
 .toolbar {
   min-height: 4em;
 }
+
+.toolbar__buttons {
+  margin: 0.6em 1em;
+}
+
+.toolbar__btn-text-align-right {
+  background-image: url("../assets/icons/paragraph-right.svg");
+}
+
+.toolbar__btn-text-align-center {
+  background-image: url("../assets/icons/paragraph-center.svg");
+}
+
+.toolbar__btn-text-align-left {
+  background-image: url("../assets/icons/paragraph-left.svg");
+}
+
+.toolbar__btn-text-align-justify {
+  background-image: url("../assets/icons/paragraph-justify.svg");
+}
+
+/*------------------------------------*\
+  #TEXT-BOX
+\*------------------------------------*/
+
 .text-box {
   background-color: #fff;
   border: 1px solid #e6e6e6;
   border-radius: 0.25em;
   margin: 0 1em 1em 1em;
   padding: 1em;
-  height: calc(100vh - 11em);
-  width: calc(100vw - 4em);
+  height: calc(100vh - 12em);
+  width:  calc(100vw - 4em);
 }
