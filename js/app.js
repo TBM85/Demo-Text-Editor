@@ -1,7 +1,7 @@
 const btns = [
-  { class: "toolbar__btn-text-align-right", dataset: "justifyRight" },
-  { class: "toolbar__btn-text-align-center", dataset: "justifyCenter" },
   { class: "toolbar__btn-text-align-left", dataset: "justifyLeft" },
+  { class: "toolbar__btn-text-align-center", dataset: "justifyCenter" },
+  { class: "toolbar__btn-text-align-right", dataset: "justifyRight" },
   { class: "toolbar__btn-text-align-justify", dataset: "justifyFull" }
 ]
 
@@ -28,7 +28,7 @@ buttonsTextAlign.classList.add("toolbar__btn-text-align");
 let containerBtnName;
 
 for (let btn of btns) {
-  
+
   if (`${btn.class}`.slice(0, 23) === "toolbar__btn-text-align") {
     containerBtnName = buttonsTextAlign;
   } else {
@@ -39,6 +39,11 @@ for (let btn of btns) {
   containerBtnName.appendChild(generalBtn);
   generalBtn.classList.add(`${btn.class}`);
   generalBtn.dataset["command"] = `${btn.dataset}`;
+
+  // Executes the specified command for the selected part
+  generalBtn.addEventListener('click', () => {
+		document.execCommand(`${btn.dataset}`, false, null);
+	});
 }
 
 // TEXT-BOX
