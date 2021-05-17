@@ -60,7 +60,8 @@ h1 {
 }
 
 .toolbar__btn-text-align,
-.toolbar__btn-text-style {
+.toolbar__btn-text-style,
+.toolbar__btn-text-list {
   margin: 0.25em 1em;
 }
 
@@ -90,6 +91,14 @@ h1 {
 
 .toolbar__btn-text-style-underline {
   background-image: url("../assets/icons/underline.svg");
+}
+
+.toolbar__btn-text-list-ordered {
+  background-image: url("../assets/icons/list-ordered.svg");
+}
+
+.toolbar__btn-text-list-unordered {
+  background-image: url("../assets/icons/list-unordered.svg");
 }
 
 /*------------------------------------*\

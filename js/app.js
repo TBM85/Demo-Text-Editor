@@ -5,7 +5,9 @@ const btns = [
   { class: "toolbar__btn-text-align-justify", dataset: "justifyFull" },
   { class: "toolbar__btn-text-style-bold", dataset: "bold" },
   { class: "toolbar__btn-text-style-italic", dataset: "italic" },
-  { class: "toolbar__btn-text-style-underline", dataset: "underline" }
+  { class: "toolbar__btn-text-style-underline", dataset: "underline" },
+  { class: "toolbar__btn-text-list-ordered", dataset: "insertOrderedList" },
+  { class: "toolbar__btn-text-list-unordered", dataset: "insertUnorderedList" }
 ]
 
 // HEADER 
@@ -33,14 +35,20 @@ const buttonsTextStyle = document.createElement("div");
 buttons.appendChild(buttonsTextStyle);
 buttonsTextStyle.classList.add("toolbar__btn-text-style");
 
+// TOOLBAR BUTTONS (Text List)
+const buttonsTextList = document.createElement("div");
+buttons.appendChild(buttonsTextList);
+buttonsTextList.classList.add("toolbar__btn-text-list");
+
 let containerBtnName;
 
 for (let btn of btns) {
-
   if (`${btn.class}`.slice(0, 23) === "toolbar__btn-text-align") {
     containerBtnName = buttonsTextAlign;
-  } else if ((`${btn.class}`.slice(0, 23) === "toolbar__btn-text-style")) {
+  } else if (`${btn.class}`.slice(0, 23) === "toolbar__btn-text-style") {
     containerBtnName = buttonsTextStyle;
+  } else if (`${btn.class}`.slice(0, 22) === "toolbar__btn-text-list") {
+    containerBtnName = buttonsTextList;
   }
 
   const generalBtn = document.createElement("button");
