@@ -7,4 +7,24 @@ html {
 }
 body {
   margin: 0;
+  background-color: #f3f3f3;
+}
+.header {
+  box-shadow: 0 6px 6px -4px #cacaca;
+}
+h1 {
+  margin: 0;
+  padding: 0.5em;
+}
+.toolbar {
+  min-height: 4em;
+}
+.text-box {
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.25em;
+  margin: 0 1em 1em 1em;
+  padding: 1em;
+  height: calc(100vh - 11em);
+  width: calc(100vw - 4em);
 }
