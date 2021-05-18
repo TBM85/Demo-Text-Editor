@@ -10,6 +10,20 @@ const btns = [
   { class: "toolbar__btn-text-list-unordered", dataset: "insertUnorderedList" },
 ];
 
+const fonts = [
+  "Arial",
+  "Baskerville",
+  "Brandon Grotesque",
+  "Verdana",
+  "Times New Roman",
+  "Georgia",
+  "Courier New",
+  "Brush Script MT",
+  "Rockwell",
+  "Futura",
+  "Lato",
+];
+
 // HEADER
 const header = document.querySelector(".header");
 
@@ -23,6 +37,33 @@ const toolbar = document.querySelector(".toolbar");
 const toolbarContainer = document.createElement("div");
 toolbar.appendChild(toolbarContainer);
 toolbarContainer.classList.add("toolbar__container");
+
+// TOOLBAR SELECT (Font Name)
+const fontName = document.createElement("div");
+toolbarContainer.appendChild(fontName);
+fontName.classList.add("toolbar__select-font-name");
+
+const labelFontName = document.createElement("label");
+fontName.appendChild(labelFontName);
+labelFontName.htmlFor = "font-name";
+labelFontName.innerHTML = "Font Name";
+
+const selectFontName = document.createElement("select");
+fontName.appendChild(selectFontName);
+selectFontName.id = "font-name";
+
+const sortFonts = fonts.sort();
+
+for (let font of sortFonts) {
+  const option = document.createElement("option");
+  selectFontName.appendChild(option);
+  option.value = font;
+  option.innerHTML = font;
+
+  selectFontName.addEventListener("change", (event) => {
+    document.execCommand("fontName", false, event.target.value);
+  });
+}
 
 // TOOLBAR SELECT (Font Size)
 const fontSize = document.createElement("div");

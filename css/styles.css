@@ -66,6 +66,7 @@ h1 {
   flex-wrap: wrap;
 }
 
+.toolbar__select-font-name,
 .toolbar__select-font-size,
 .toolbar__btn-text-align,
 .toolbar__btn-text-style,
@@ -73,14 +74,19 @@ h1 {
   margin: 0.25em 1em;
 }
 
+.toolbar__select-font-name,
 .toolbar__select-font-size {
   display: block;
   margin-top: 0.5em;
   text-align: left;
 }
 
+.toolbar__select-font-name {
+  width: 8em;
+}
+
 .toolbar__select-font-size {
-  width: 6em;
+  width: 5em;
 }
 
 .toolbar__btn-text-align-left {
