@@ -1,6 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
 
 /*------------------------------------*\
+  #MEDIA-QUERIES
+\*------------------------------------*/
+
+@media (max-width: 575px) {
+  .toolbar__btn-text-edit,
+  .toolbar__btn-text-align,
+  .toolbar__btn-text-style,
+  .toolbar__btn-text-list { 
+    margin: 0.25em 0.1em;
+  }
+  .text-box {
+    height: calc(100vh - 25em);
+  }
+}
+
+@media (min-width: 576px) {
+  .toolbar__btn-text-edit,
+  .toolbar__btn-text-align,
+  .toolbar__btn-text-style,
+  .toolbar__btn-text-list { 
+    margin: 0.25em 1.25em 0.25em 0;
+  }
+  .text-box {
+    height: calc(100vh - 18em);
+  }
+}
+
+/*------------------------------------*\
   #GENERAL
 \*------------------------------------*/
 
@@ -67,33 +95,28 @@ h1 {
 }
 
 .toolbar__container {
-  margin: 0.5em 0;
+  margin: 0.5em 1em;
   display: flex;
   flex-wrap: wrap;
 }
 
-.toolbar__select-font-name,
-.toolbar__select-font-size,
-.toolbar__btn-text-edit,
-.toolbar__btn-text-align,
-.toolbar__btn-text-style,
-.toolbar__btn-text-list {
-  margin: 0.25em 1em;
-}
-.toolbar__select-color {
-  margin: 0.25em 1.5em 0.25em 0;
+.toolbar-selects,
+.toolbar-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
 }
 
 .toolbar__select-font-name,
 .toolbar__select-font-size,
 .toolbar__select-color {
   display: block;
-  margin-top: 0.5em;
-  text-align: left;
+  margin: 0.5em 0.8em 0.5em 0;
 }
 
 .toolbar__select-font-name {
   width: 8em;
+  margin-right: 1.8em !important;
 }
 
 .toolbar__select-font-size {
@@ -123,6 +146,18 @@ h1 {
   background-image: url("../assets/icons/redo.svg");
 }
 
+.toolbar__btn-text-style-bold {
+  background-image: url("../assets/icons/bold.svg");
+}
+
+.toolbar__btn-text-style-italic {
+  background-image: url("../assets/icons/italic.svg");
+}
+
+.toolbar__btn-text-style-underline {
+  background-image: url("../assets/icons/underline.svg");
+}
+
 .toolbar__btn-text-align-left {
   background-image: url("../assets/icons/paragraph-left.svg");
 }
@@ -137,18 +172,6 @@ h1 {
 
 .toolbar__btn-text-align-justify {
   background-image: url("../assets/icons/paragraph-justify.svg");
-}
-
-.toolbar__btn-text-style-bold {
-  background-image: url("../assets/icons/bold.svg");
-}
-
-.toolbar__btn-text-style-italic {
-  background-image: url("../assets/icons/italic.svg");
-}
-
-.toolbar__btn-text-style-underline {
-  background-image: url("../assets/icons/underline.svg");
 }
 
 .toolbar__btn-text-list-ordered {
@@ -169,7 +192,6 @@ h1 {
   border-radius: 0.25em;
   margin: 0 1em 1em 1em;
   padding: 1em;
-  height: calc(100vh - 12em);
   width:  calc(100vw - 4em);
   text-align: left;
 }

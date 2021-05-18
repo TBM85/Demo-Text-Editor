@@ -13,7 +13,7 @@ const btns = [
   { class: "toolbar__btn-text-align-right", dataset: "justifyRight" },
   { class: "toolbar__btn-text-align-justify", dataset: "justifyFull" },
   { class: "toolbar__btn-text-list-ordered", dataset: "insertOrderedList" },
-  { class: "toolbar__btn-text-list-unordered", dataset: "insertUnorderedList" },
+  { class: "toolbar__btn-text-list-unordered", dataset: "insertUnorderedList" }
 ];
 
 const fonts = [
@@ -44,9 +44,14 @@ const toolbarContainer = document.createElement("div");
 toolbar.appendChild(toolbarContainer);
 toolbarContainer.classList.add("toolbar__container");
 
+// TOOLBAR SELECTS
+const toolbarSelects = document.createElement("div");
+toolbarContainer.appendChild(toolbarSelects);
+toolbarSelects.classList.add("toolbar-selects");
+
 // TOOLBAR SELECT (Font Name)
 const fontName = document.createElement("div");
-toolbarContainer.appendChild(fontName);
+toolbarSelects.appendChild(fontName);
 fontName.classList.add("toolbar__select-font-name");
 
 const labelFontName = document.createElement("label");
@@ -73,7 +78,7 @@ for (let font of sortFonts) {
 
 // TOOLBAR SELECT (Font Size)
 const fontSize = document.createElement("div");
-toolbarContainer.appendChild(fontSize);
+toolbarSelects.appendChild(fontSize);
 fontSize.classList.add("toolbar__select-font-size");
 
 const labelFontSize = document.createElement("label");
@@ -98,7 +103,7 @@ for (let i = 3; i <= 7; i++) {
 
 // TOOLBAR SELECT (Color) 
 const selectColor = document.createElement("div");
-toolbarContainer.appendChild(selectColor);
+toolbarSelects.appendChild(selectColor);
 selectColor.classList.add("toolbar__select-color");
 
 const labelColor = document.createElement("label");
@@ -116,24 +121,29 @@ inputColor.addEventListener("input", (event) => {
   document.execCommand("foreColor", false, event.target.value);
 });
 
+// TOOLBAR BUTTONS
+const toolbarButtons = document.createElement("div");
+toolbarContainer.appendChild(toolbarButtons);
+toolbarButtons.classList.add("toolbar-buttons");
+
 // TOOLBAR BUTTON (Text Edit)
 const buttonsTextEdit = document.createElement("div");
-toolbarContainer.appendChild(buttonsTextEdit);
+toolbarButtons.appendChild(buttonsTextEdit);
 buttonsTextEdit.classList.add("toolbar__btn-text-edit");
 
 // TOOLBAR BUTTON (Text Style)
 const buttonsTextStyle = document.createElement("div");
-toolbarContainer.appendChild(buttonsTextStyle);
+toolbarButtons.appendChild(buttonsTextStyle);
 buttonsTextStyle.classList.add("toolbar__btn-text-style");
 
 // TOOLBAR BUTTON (Text Align)
 const buttonsTextAlign = document.createElement("div");
-toolbarContainer.appendChild(buttonsTextAlign);
+toolbarButtons.appendChild(buttonsTextAlign);
 buttonsTextAlign.classList.add("toolbar__btn-text-align");
 
 // TOOLBAR BUTTON (Text List)
 const buttonsTextList = document.createElement("div");
-toolbarContainer.appendChild(buttonsTextList);
+toolbarButtons.appendChild(buttonsTextList);
 buttonsTextList.classList.add("toolbar__btn-text-list");
 
 let containerBtnName;
@@ -147,7 +157,7 @@ for (let btn of btns) {
     containerBtnName = buttonsTextStyle;
   } else if (`${btn.class}`.slice(18, 22) === "list") {
     containerBtnName = buttonsTextList;
-  } 
+  }
 
   const generalBtn = document.createElement("button");
   containerBtnName.appendChild(generalBtn);
