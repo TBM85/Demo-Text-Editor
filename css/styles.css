@@ -29,6 +29,13 @@ button {
   cursor: pointer;
 }
 
+select {
+  width: fit-content;
+  min-width: 6em;
+  margin-top: 0.25em;
+  padding: 0.2em;
+}
+
 /*------------------------------------*\
   #HEADER
 \*------------------------------------*/
@@ -53,16 +60,27 @@ h1 {
   min-height: 4em;
 }
 
-.toolbar__buttons {
+.toolbar__container {
   margin: 0.5em 0;
   display: flex;
   flex-wrap: wrap;
 }
 
+.toolbar__select-font-size,
 .toolbar__btn-text-align,
 .toolbar__btn-text-style,
 .toolbar__btn-text-list {
   margin: 0.25em 1em;
+}
+
+.toolbar__select-font-size {
+  display: block;
+  margin-top: 0.5em;
+  text-align: left;
+}
+
+.toolbar__select-font-size {
+  width: 6em;
 }
 
 .toolbar__btn-text-align-left {
