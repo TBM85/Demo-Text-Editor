@@ -90,17 +90,37 @@ for (let i = 3; i <= 7; i++) {
   });
 }
 
-// TOOLBAR BUTTONS (Text Style)
+// TOOLBAR SELECT (Color) 
+const selectColor = document.createElement("div");
+toolbarContainer.appendChild(selectColor);
+selectColor.classList.add("toolbar__select-color");
+
+const labelColor = document.createElement("label");
+selectColor.appendChild(labelColor);
+labelColor.htmlFor = "select-color";
+labelColor.innerHTML = "Color";
+
+const inputColor = document.createElement("input");
+selectColor.appendChild(inputColor);
+inputColor.id = "select-color";
+inputColor.type = "color";
+inputColor.value = "#000";
+
+inputColor.addEventListener("input", (event) => {
+  document.execCommand("foreColor", false, event.target.value);
+});
+
+// TOOLBAR BUTTON (Text Style)
 const buttonsTextStyle = document.createElement("div");
 toolbarContainer.appendChild(buttonsTextStyle);
 buttonsTextStyle.classList.add("toolbar__btn-text-style");
 
-// TOOLBAR BUTTONS (Text Align)
+// TOOLBAR BUTTON (Text Align)
 const buttonsTextAlign = document.createElement("div");
 toolbarContainer.appendChild(buttonsTextAlign);
 buttonsTextAlign.classList.add("toolbar__btn-text-align");
 
-// TOOLBAR BUTTONS (Text List)
+// TOOLBAR BUTTON (Text List)
 const buttonsTextList = document.createElement("div");
 toolbarContainer.appendChild(buttonsTextList);
 buttonsTextList.classList.add("toolbar__btn-text-list");

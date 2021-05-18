@@ -36,6 +36,12 @@ select {
   padding: 0.2em;
 }
 
+input {
+  min-width: 5em;
+  margin-top: 0.25em;
+  padding: 0;
+}
+
 /*------------------------------------*\
   #HEADER
 \*------------------------------------*/
@@ -73,9 +79,13 @@ h1 {
 .toolbar__btn-text-list {
   margin: 0.25em 1em;
 }
+.toolbar__select-color {
+  margin: 0.25em 1.5em 0.25em 0;
+}
 
 .toolbar__select-font-name,
-.toolbar__select-font-size {
+.toolbar__select-font-size,
+.toolbar__select-color {
   display: block;
   margin-top: 0.5em;
   text-align: left;
@@ -87,6 +97,10 @@ h1 {
 
 .toolbar__select-font-size {
   width: 5em;
+}
+
+.toolbar__select-color {
+  width: 4em;
 }
 
 .toolbar__btn-text-align-left {
@@ -137,4 +151,5 @@ h1 {
   padding: 1em;
   height: calc(100vh - 12em);
   width:  calc(100vw - 4em);
+  text-align: left;
 }
