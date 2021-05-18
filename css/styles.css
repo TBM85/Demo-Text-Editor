@@ -74,6 +74,7 @@ h1 {
 
 .toolbar__select-font-name,
 .toolbar__select-font-size,
+.toolbar__btn-text-edit,
 .toolbar__btn-text-align,
 .toolbar__btn-text-style,
 .toolbar__btn-text-list {
@@ -101,6 +102,25 @@ h1 {
 
 .toolbar__select-color {
   width: 4em;
+}
+
+.toolbar__btn-text-edit-select-all {
+  background-image: url("../assets/icons/select-all.svg");
+}
+.toolbar__btn-text-edit-cut {
+  background-image: url("../assets/icons/scissors.svg");
+}
+.toolbar__btn-text-edit-copy {
+  background-image: url("../assets/icons/copy.svg");
+}
+.toolbar__btn-text-edit-paste {
+  background-image: url("../assets/icons/paste.svg");
+}
+.toolbar__btn-text-edit-undo {
+  background-image: url("../assets/icons/undo.svg");
+}
+.toolbar__btn-text-edit-redo {
+  background-image: url("../assets/icons/redo.svg");
 }
 
 .toolbar__btn-text-align-left {

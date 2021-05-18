@@ -1,4 +1,10 @@
 const btns = [
+  { class: "toolbar__btn-text-edit-select-all", dataset: "selectAll" },
+  { class: "toolbar__btn-text-edit-cut", dataset: "cut" },
+  { class: "toolbar__btn-text-edit-copy", dataset: "copy" },
+  { class: "toolbar__btn-text-edit-paste", dataset: "paste" },
+  { class: "toolbar__btn-text-edit-undo", dataset: "undo" },
+  { class: "toolbar__btn-text-edit-redo", dataset: "redo" },
   { class: "toolbar__btn-text-style-bold", dataset: "bold" },
   { class: "toolbar__btn-text-style-italic", dataset: "italic" },
   { class: "toolbar__btn-text-style-underline", dataset: "underline" },
@@ -110,6 +116,11 @@ inputColor.addEventListener("input", (event) => {
   document.execCommand("foreColor", false, event.target.value);
 });
 
+// TOOLBAR BUTTON (Text Edit)
+const buttonsTextEdit = document.createElement("div");
+toolbarContainer.appendChild(buttonsTextEdit);
+buttonsTextEdit.classList.add("toolbar__btn-text-edit");
+
 // TOOLBAR BUTTON (Text Style)
 const buttonsTextStyle = document.createElement("div");
 toolbarContainer.appendChild(buttonsTextStyle);
@@ -128,13 +139,15 @@ buttonsTextList.classList.add("toolbar__btn-text-list");
 let containerBtnName;
 
 for (let btn of btns) {
-  if (`${btn.class}`.slice(0, 23) === "toolbar__btn-text-align") {
+  if (`${btn.class}`.slice(18, 22) === "edit") {
+    containerBtnName = buttonsTextEdit;
+  } else if (`${btn.class}`.slice(18, 23) === "align") {
     containerBtnName = buttonsTextAlign;
-  } else if (`${btn.class}`.slice(0, 23) === "toolbar__btn-text-style") {
+  } else if (`${btn.class}`.slice(18, 23) === "style") {
     containerBtnName = buttonsTextStyle;
-  } else if (`${btn.class}`.slice(0, 22) === "toolbar__btn-text-list") {
+  } else if (`${btn.class}`.slice(18, 22) === "list") {
     containerBtnName = buttonsTextList;
-  }
+  } 
 
   const generalBtn = document.createElement("button");
   containerBtnName.appendChild(generalBtn);
@@ -142,8 +155,9 @@ for (let btn of btns) {
   generalBtn.dataset["command"] = `${btn.dataset}`;
 
   // Executes the specified command for the selected part
-  generalBtn.addEventListener("click", () => {
-    document.execCommand(`${btn.dataset}`, false, null);
+  generalBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    document.execCommand(`${btn.dataset}`, false, event.target.value);
   });
 }
 
