@@ -8,6 +8,8 @@ const btns = [
   { class: "toolbar__btn-text-style-bold", dataset: "bold" },
   { class: "toolbar__btn-text-style-italic", dataset: "italic" },
   { class: "toolbar__btn-text-style-underline", dataset: "underline" },
+  { class: "toolbar__btn-text-style-subscript", dataset: "subscript" },
+  { class: "toolbar__btn-text-style-superscript", dataset: "superscript" },
   { class: "toolbar__btn-text-align-left", dataset: "justifyLeft" },
   { class: "toolbar__btn-text-align-center", dataset: "justifyCenter" },
   { class: "toolbar__btn-text-align-right", dataset: "justifyRight" },

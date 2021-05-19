@@ -158,6 +158,14 @@ h1 {
   background-image: url("../assets/icons/underline.svg");
 }
 
+.toolbar__btn-text-style-subscript {
+  background-image: url("../assets/icons/subscript.svg");
+}
+
+.toolbar__btn-text-style-superscript {
+  background-image: url("../assets/icons/superscript.svg");
+}
+
 .toolbar__btn-text-align-left {
   background-image: url("../assets/icons/paragraph-left.svg");
 }
