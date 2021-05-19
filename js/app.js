@@ -71,13 +71,17 @@ const sortFonts = fonts.sort();
 for (let font of sortFonts) {
   const option = document.createElement("option");
   selectFontName.appendChild(option);
+  option.classList.add(font.toLowerCase().replace(/\s/g, '-'));
   option.value = font;
   option.innerHTML = font;
-
-  selectFontName.addEventListener("change", (event) => {
-    document.execCommand("fontName", false, event.target.value);
-  });
 }
+
+let selectedFontName = document.querySelector(".inconsolata");
+selectedFontName.selected = "selected";
+
+selectFontName.addEventListener("change", (event) => {
+  document.execCommand("fontName", false, event.target.value);
+});
 
 // TOOLBAR SELECT (Font Size)
 const fontSize = document.createElement("div");
@@ -98,11 +102,11 @@ for (let i = 3; i <= 7; i++) {
   selectFontSize.appendChild(option);
   option.value = i;
   option.innerHTML = i * 4 + " px";
-
-  selectFontSize.addEventListener("change", (event) => {
-    document.execCommand("fontSize", false, event.target.value);
-  });
 }
+
+selectFontSize.addEventListener("change", (event) => {
+  document.execCommand("fontSize", false, event.target.value);
+});
 
 // TOOLBAR SELECT (Color) 
 const selectColor = document.createElement("div");
