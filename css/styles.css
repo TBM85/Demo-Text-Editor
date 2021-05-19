@@ -47,7 +47,8 @@ button {
   width:   3.5em;
   height:  3.5em;
   margin:  0.25em;
-  padding: 0.5em;
+  padding: 2.5em;
+  font-size: 0.6em;
   background-color:    #fff;
   background-repeat:   no-repeat;
   background-position: center;
@@ -96,8 +97,6 @@ h1 {
 
 .toolbar__container {
   margin: 0.5em 1em;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .toolbar-selects,
@@ -198,8 +197,17 @@ h1 {
   background-color: #fff;
   border: 1px solid #e6e6e6;
   border-radius: 0.25em;
-  margin: 0 1em 1em 1em;
+  margin: 0 1em;
   padding: 1em;
   width:  calc(100vw - 4em);
   text-align: left;
+}
+
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+
+footer p {
+  margin: 0.5em;
+  font-size: 0.8em;
 }
