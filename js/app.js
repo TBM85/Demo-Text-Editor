@@ -30,6 +30,7 @@ const fonts = [
   "Rockwell",
   "Futura",
   "Lato",
+  "Inconsolata"
 ];
 
 // HEADER
@@ -167,9 +168,8 @@ for (let btn of btns) {
   generalBtn.dataset["command"] = `${btn.dataset}`;
 
   // Executes the specified command for the selected part
-  generalBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.execCommand(`${btn.dataset}`, false, event.target.value);
+  generalBtn.addEventListener("click", () => {
+    document.execCommand(`${btn.dataset}`, false, null);
   });
 }
 

@@ -201,6 +201,7 @@ h1 {
   padding: 1em;
   width:  calc(100vw - 4em);
   text-align: left;
+  overflow: scroll;
 }
 
 /*------------------------------------*\
