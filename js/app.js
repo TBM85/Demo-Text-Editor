@@ -1,21 +1,21 @@
 const btns = [
-  { class: "toolbar__btn-text-edit-select-all", dataset: "selectAll" },
-  { class: "toolbar__btn-text-edit-cut", dataset: "cut" },
-  { class: "toolbar__btn-text-edit-copy", dataset: "copy" },
-  { class: "toolbar__btn-text-edit-paste", dataset: "paste" },
-  { class: "toolbar__btn-text-edit-undo", dataset: "undo" },
-  { class: "toolbar__btn-text-edit-redo", dataset: "redo" },
-  { class: "toolbar__btn-text-style-bold", dataset: "bold" },
-  { class: "toolbar__btn-text-style-italic", dataset: "italic" },
-  { class: "toolbar__btn-text-style-underline", dataset: "underline" },
-  { class: "toolbar__btn-text-style-subscript", dataset: "subscript" },
-  { class: "toolbar__btn-text-style-superscript", dataset: "superscript" },
-  { class: "toolbar__btn-text-align-left", dataset: "justifyLeft" },
-  { class: "toolbar__btn-text-align-center", dataset: "justifyCenter" },
-  { class: "toolbar__btn-text-align-right", dataset: "justifyRight" },
-  { class: "toolbar__btn-text-align-justify", dataset: "justifyFull" },
-  { class: "toolbar__btn-text-list-ordered", dataset: "insertOrderedList" },
-  { class: "toolbar__btn-text-list-unordered", dataset: "insertUnorderedList" }
+  { title: "Select All", class: "toolbar__btn-text-edit-select-all", dataset: "selectAll" },
+  { title: "Cut", class: "toolbar__btn-text-edit-cut", dataset: "cut" },
+  { title: "Copy", class: "toolbar__btn-text-edit-copy", dataset: "copy" },
+  { title: "Paste", class: "toolbar__btn-text-edit-paste", dataset: "paste" },
+  { title: "Undo", class: "toolbar__btn-text-edit-undo", dataset: "undo" },
+  { title: "Redo", class: "toolbar__btn-text-edit-redo", dataset: "redo" },
+  { title: "Bold", class: "toolbar__btn-text-style-bold", dataset: "bold" },
+  { title: "Italic", class: "toolbar__btn-text-style-italic", dataset: "italic" },
+  { title: "Underline", class: "toolbar__btn-text-style-underline", dataset: "underline" },
+  { title: "Subscript", class: "toolbar__btn-text-style-subscript", dataset: "subscript" },
+  { title: "Superscript", class: "toolbar__btn-text-style-superscript", dataset: "superscript" },
+  { title: "Left", class: "toolbar__btn-text-align-left", dataset: "justifyLeft" },
+  { title: "Center", class: "toolbar__btn-text-align-center", dataset: "justifyCenter" },
+  { title: "Right", class: "toolbar__btn-text-align-right", dataset: "justifyRight" },
+  { title: "Justify", class: "toolbar__btn-text-align-justify", dataset: "justifyFull" },
+  { title: "Ordered List", class: "toolbar__btn-text-list-ordered", dataset: "insertOrderedList" },
+  { title: "Unordered List", class: "toolbar__btn-text-list-unordered", dataset: "insertUnorderedList" }
 ];
 
 const fonts = [
@@ -169,6 +169,7 @@ for (let btn of btns) {
   const generalBtn = document.createElement("button");
   containerBtnName.appendChild(generalBtn);
   generalBtn.classList.add(`${btn.class}`);
+  generalBtn.title = `${btn.title}`
   generalBtn.dataset["command"] = `${btn.dataset}`;
 
   // Executes the specified command for the selected part
