@@ -182,6 +182,12 @@ for (let btn of btns) {
       }, 150);
     }
 
+    // The "style" buttons remain pressed when applied to selected text
+    // To disable its function, release the button
+    if (generalBtn.classList.value.slice(18, 23) === "style") {
+      generalBtn.classList.toggle("pressed");
+    }
+
     document.execCommand(`${btn.dataset}`, false, null);
   });
 }
