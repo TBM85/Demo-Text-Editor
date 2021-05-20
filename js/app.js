@@ -158,10 +158,10 @@ let containerBtnName;
 for (let btn of btns) {
   if (`${btn.class}`.slice(18, 22) === "edit") {
     containerBtnName = buttonsTextEdit;
-  } else if (`${btn.class}`.slice(18, 23) === "align") {
-    containerBtnName = buttonsTextAlign;
   } else if (`${btn.class}`.slice(18, 23) === "style") {
     containerBtnName = buttonsTextStyle;
+  } else if (`${btn.class}`.slice(18, 23) === "align") {
+    containerBtnName = buttonsTextAlign;
   } else if (`${btn.class}`.slice(18, 22) === "list") {
     containerBtnName = buttonsTextList;
   }
@@ -173,6 +173,15 @@ for (let btn of btns) {
 
   // Executes the specified command for the selected part
   generalBtn.addEventListener("click", () => {
+
+    // The "edit" buttons are pressed only for 150ms
+    if (generalBtn.classList.value.slice(18, 22) === "edit") {
+      generalBtn.classList.add("pressed");
+      setTimeout(() => {
+        generalBtn.classList.remove("pressed");
+      }, 150);
+    }
+
     document.execCommand(`${btn.dataset}`, false, null);
   });
 }
