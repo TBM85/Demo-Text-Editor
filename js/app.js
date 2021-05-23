@@ -172,11 +172,13 @@ for (let btn of btns) {
   generalBtn.title = `${btn.title}`
   generalBtn.dataset["command"] = `${btn.dataset}`;
 
+  const classValue = generalBtn.classList.value;
+
   // Executes the specified command for the selected part
   generalBtn.addEventListener("click", () => {
     
     // The "edit" buttons are pressed only for 150ms
-    if (generalBtn.classList.value.slice(18, 22) === "edit") {
+    if (classValue.slice(18, 22) === "edit") {
       generalBtn.classList.add("pressed");
       setTimeout(() => {
         generalBtn.classList.remove("pressed");
@@ -185,8 +187,22 @@ for (let btn of btns) {
 
     // The "style" buttons remain pressed when applied to selected text
     // To disable its function, release the button
-    if (generalBtn.classList.value.slice(18, 23) === "style") {
+    if (classValue.slice(18, 23) === "style") {
       generalBtn.classList.toggle("pressed");
+    }
+
+    const btnOrdList = document.querySelector(".toolbar__btn-text-list-ordered");
+    const btnUnordList = document.querySelector(".toolbar__btn-text-list-unordered");
+
+    // Only one type of list can be selected at a time
+    if (classValue.slice(18, 22) === "list") {
+      if (classValue.slice(23, 30) === "ordered") {
+        btnOrdList.classList.toggle("pressed");
+        btnUnordList.classList.remove("pressed");
+      } else if (classValue.slice(23, 32) === "unordered") {
+        btnUnordList.classList.toggle("pressed");
+        btnOrdList.classList.remove("pressed");
+      }
     }
 
     document.execCommand(`${btn.dataset}`, false, null);
