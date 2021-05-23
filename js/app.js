@@ -189,19 +189,31 @@ for (let btn of btns) {
         generalBtn.classList.remove("pressed");
       }, 150);
     }
-
+    
     // The "style" buttons remain pressed when applied to selected text
     // To disable its function, release the button
-    if (classValue.slice(18, 23) === "style") {
-      generalBtn.classList.toggle("pressed");
-    }
+    // The "subscript" and "superscript" buttons are pressed alternately
+    const btnSubscript = document.querySelector(".toolbar__btn-text-style-subscript");
+    const btnSuperscript = document.querySelector(".toolbar__btn-text-style-superscript");
 
+    if (classValue.slice(18, 23) === "style") {
+      if (classValue.slice(24, 33) === "subscript") {
+        btnSubscript.classList.toggle("pressed");
+        btnSuperscript.classList.remove("pressed");
+      } else if (classValue.slice(24, 35) === "superscript") {
+        btnSuperscript.classList.toggle("pressed");
+        btnSubscript.classList.remove("pressed");
+      } else {
+        generalBtn.classList.toggle("pressed");
+      }
+    }
+    
+    // Only one "align" button remain pressed at a time
     const btnLeft = document.querySelector(".toolbar__btn-text-align-left");
     const btnCenter = document.querySelector(".toolbar__btn-text-align-center");
     const btnRight = document.querySelector(".toolbar__btn-text-align-right");
     const btnJustify = document.querySelector(".toolbar__btn-text-align-justify");
 
-    // Only one "align" button remain pressed at a time
     if (classValue.slice(18, 23) === "align") {
       generalBtn.classList.add("pressed");
       if (classValue.slice(24, 28) === "left") {
@@ -223,10 +235,10 @@ for (let btn of btns) {
       }
     }
 
+    // Only one type of list can be selected at a time
     const btnOrdList = document.querySelector(".toolbar__btn-text-list-ordered");
     const btnUnordList = document.querySelector(".toolbar__btn-text-list-unordered");
 
-    // Only one type of list can be selected at a time
     if (classValue.slice(18, 22) === "list") {
       if (classValue.slice(23, 30) === "ordered") {
         btnOrdList.classList.toggle("pressed");
