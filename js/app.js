@@ -174,6 +174,11 @@ for (let btn of btns) {
 
   const classValue = generalBtn.classList.value;
 
+  // Displays by default the right alignment button pressed
+  if (classValue.slice(24, 28) === "left") {
+    generalBtn.classList.add("pressed");
+  }
+
   // Executes the specified command for the selected part
   generalBtn.addEventListener("click", () => {
     
@@ -189,6 +194,33 @@ for (let btn of btns) {
     // To disable its function, release the button
     if (classValue.slice(18, 23) === "style") {
       generalBtn.classList.toggle("pressed");
+    }
+
+    const btnLeft = document.querySelector(".toolbar__btn-text-align-left");
+    const btnCenter = document.querySelector(".toolbar__btn-text-align-center");
+    const btnRight = document.querySelector(".toolbar__btn-text-align-right");
+    const btnJustify = document.querySelector(".toolbar__btn-text-align-justify");
+
+    // Only one "align" button remain pressed at a time
+    if (classValue.slice(18, 23) === "align") {
+      generalBtn.classList.add("pressed");
+      if (classValue.slice(24, 28) === "left") {
+          btnCenter.classList.remove("pressed"); 
+          btnRight.classList.remove("pressed");
+          btnJustify.classList.remove("pressed");
+      } else if (classValue.slice(24, 30) === "center") {
+          btnLeft.classList.remove("pressed");
+          btnRight.classList.remove("pressed");
+          btnJustify.classList.remove("pressed");
+      } else if (classValue.slice(24, 29) === "right") {
+          btnLeft.classList.remove("pressed");
+          btnCenter.classList.remove("pressed"); 
+          btnJustify.classList.remove("pressed");
+      } else if (classValue.slice(24, 31) === "justify") {
+          btnLeft.classList.remove("pressed");
+          btnCenter.classList.remove("pressed"); 
+          btnRight.classList.remove("pressed");
+      }
     }
 
     const btnOrdList = document.querySelector(".toolbar__btn-text-list-ordered");
