@@ -63,6 +63,11 @@ select {
   min-width: 6em;
   margin-top: 0.25em;
   padding: 0.2em;
+  user-select: none;
+}
+
+label {
+  user-select: none;
 }
 
 input {
@@ -85,6 +90,7 @@ h1 {
   background-color: #483d8b;
   color: #fff;
   text-shadow: 1px 1px 6px #000;
+  user-select: none;
 }
 
 /*------------------------------------*\
@@ -215,4 +221,5 @@ h1 {
 footer p {
   margin: 0.5em;
   font-size: 0.8em;
+  user-select: none;
 }

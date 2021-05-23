@@ -174,7 +174,7 @@ for (let btn of btns) {
 
   // Executes the specified command for the selected part
   generalBtn.addEventListener("click", () => {
-
+    
     // The "edit" buttons are pressed only for 150ms
     if (generalBtn.classList.value.slice(18, 22) === "edit") {
       generalBtn.classList.add("pressed");
